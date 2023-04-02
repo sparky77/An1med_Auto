@@ -14,7 +14,12 @@ public class StepDef {
 
     @Given("Customer performs search for pet stock")
     public void customerSearchesForStock() {
-        firstTest.search("doggie treats");
+        firstTest.customerActions("search","doggie treats");
+    }
+
+    @Given("Scrape product Data and Serialise product data")
+    public void productDataSearlization() {
+        firstTest.parseProductData();
     }
 
     @Then("TearDown")

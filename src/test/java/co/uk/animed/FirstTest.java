@@ -18,11 +18,7 @@ public class FirstTest extends PageHelper {
 
     public void openBrowserTest() {
         setUp();
-
         testLogic();
-
-        //tearDown();
-
     }
 
 

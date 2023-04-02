@@ -2,6 +2,7 @@ package Helper;
 
 import co.uk.animed.FirstTest;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -85,6 +86,14 @@ public class PageHelper {
     public void tearDown() {
         LOGGER.info("Tearing down the test...");
         driver.quit();
+    }
+
+    public void testLogic() {
+        LOGGER.info("Running the test...");
+        driver.get("https://www.animeddirect.co.uk/");
+        LOGGER.info("Title of the page is: {}", driver.getTitle());
+        Assert.assertEquals("Page title is not correct", "Pet Foods | Pet Prescription Medication | Pet Accessories", driver.getTitle());
+        LOGGER.info("Test completed...");
     }
 
 }

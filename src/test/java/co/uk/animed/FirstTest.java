@@ -15,19 +15,16 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class FirstTest extends PageHelper {
-    WebDriver driver;
 
     public void openBrowserTest() {
         setUp();
 
-        LOGGER.info("Running the test...");
-        driver.get("https://www.animeddirect.co.uk/");
-        LOGGER.info("Title of the page is: {}", driver.getTitle());
-        Assert.assertEquals("Page title is not correct", "Pet Foods | Pet Prescription Medication | Pet Accessories", driver.getTitle());
-        LOGGER.info("Test completed...");
+        testLogic();
 
         tearDown();
     }
+
+
 }
 
 

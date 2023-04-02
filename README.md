@@ -15,14 +15,21 @@ JAVA, MAVEN, CUCUMBER, JUNIT, SELENIUM, AWS EC2, JENKINS, GITHUB REPO (W/WebHook
 - Close marketing form
 - Click searh trigger (prime search method)
 
-## Test Task List
+## Tests 
+
+- HOMEPAGE PREP :: Customer Visits Animie direct website, and asserts against the page title, performs per-conditional steps
+- SEARCH :: Customer performs a customisable search against 'Doggie treats'
+- PRODUCT DATA :: Scrape and Serialise Product Data (OL >> LI >> Product Name and Price) 
+
+## Technicial Task List
 
 - [x] Create Cucumber file and use test runner for configuration and glue / setup
 - [x] Ensure Background tasks stable and documented
-- [x] Create remote connection to BrowserStack instance (Chrome and Win 11 for demo)
-- [x] Configure AWS instance
-- [x] Install Java, Jenkins, Maven, GIT and setup AWS for CI
+- [x] Create remote connection to BrowserStack instance (Chrome and Win 11)
+- [x] Configure AWS instance (Install Java, Jenkins, Maven, GIT and setup AWS for CI)
+- [x] Configure Jenkins & Jobs
 - [x] GITHUB Project creation, with Webhooks, connecting to Jenkins configuration
+- [x] Create tear down method to close all driver instances
 - [x] Create test cases (Background, Search, Product Page Scrape and parsing) :tada:
 - [ ] Basic reporting (TODO - ALLURE with server OR Cucumber basic)
 - [ ] Implement POM (Page Object Modelling) and refactor code
@@ -57,7 +64,6 @@ JAVA, MAVEN, CUCUMBER, JUNIT, SELENIUM, AWS EC2, JENKINS, GITHUB REPO (W/WebHook
 ## Get the code
 
 Git:
-
     git clone https://github.com/sparky77/An1med_Auto.git
 
 Open a command window and run:

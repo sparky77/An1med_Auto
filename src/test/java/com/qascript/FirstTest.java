@@ -13,7 +13,7 @@ public class FirstTest {
     WebDriver driver;
 
     @Test
-    public void OpenBrowser()  {
+    public void OpenBrowserTest()  {
         startRemoteBrowser();
         driver.get("https://www.animeddirect.co.uk/");
         System.out.println("Title of the page is: " + driver.getTitle());

@@ -118,6 +118,7 @@ public class PageHelper {
         desiredCapabilities.setCapability("os_version", "11");
         desiredCapabilities.setCapability("seleniumVersion", "4.2.2");
         desiredCapabilities.setCapability("project", "BAT");
+        desiredCapabilities.setCapability("resolution", "2048x1536");
         desiredCapabilities.setCapability("build","ANIMED DIRECT" + " :: AUTOMATION CI");
         driver = WebDriverManager.chromedriver()
                 .capabilities(desiredCapabilities)

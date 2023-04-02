@@ -51,7 +51,7 @@ public class FirstTest {
         webDriver.quit();
     }
 
-    //@Test
+    @Test
     public void openBrowserTest() {
         //setUp();
 

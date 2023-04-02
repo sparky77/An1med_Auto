@@ -1,14 +1,11 @@
 package co.uk.animed;
 
-import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
-
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.MutableCapabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -21,7 +18,7 @@ public class FirstTest {
     private static final String HUB_URL = "https://marcussmith_tdujoc:nd7Yfv4AuWaaYzq3S8NM@hub-cloud.browserstack.com/wd/hub";
     private WebDriver webDriver;
 
-    @Before
+
     public void setUp() {
         LOGGER.info("Setting up the test...");
         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
@@ -45,15 +42,13 @@ public class FirstTest {
         webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
-    @After
     public void tearDown() {
         LOGGER.info("Tearing down the test...");
         webDriver.quit();
     }
 
-    @Test
     public void openBrowserTest() {
-        //setUp();
+        setUp();
 
         LOGGER.info("Running the test...");
         webDriver.get("https://www.animeddirect.co.uk/");
@@ -61,7 +56,7 @@ public class FirstTest {
         Assert.assertEquals("Page title is not correct", "Pet Foods | Pet Prescription Medication | Pet Accessories", webDriver.getTitle());
         LOGGER.info("Test completed...");
 
-        //tearDown();
+        tearDown();
     }
 }
 

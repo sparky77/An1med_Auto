@@ -39,6 +39,7 @@ public class PageHelper {
 
     public void type(By locator, String text) {
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+        element.click();
         element.sendKeys(text);
     }
 
@@ -54,6 +55,29 @@ public class PageHelper {
         } catch (Exception e) {
             return false;
         }
+    }
+
+    public void customerActions(String action, String value) {
+        switch (action.toLowerCase()) {
+            case "search":
+                search(value);
+                break;
+            default:
+                System.out.println("Invalid customer action: " + action);
+                break;
+        }
+    }
+
+    public void search(String searchTerm) {
+        try {
+            click(By.cssSelector(".frel_button-close"));
+            click(By.cssSelector("#search-trigger"));
+        } catch (Exception e) {
+            System.out.println("Couldn't find / click frel button close");
+        }
+        type(By.cssSelector("input[id='search']"), searchTerm);
+        click(By.cssSelector("button[class='action search']"));
+        Assert.assertEquals("Page title is not correct", "Search results for: 'doggie treats'", driver.getTitle());
     }
 
     public void waitForLoad(By locator) {
@@ -81,6 +105,7 @@ public class PageHelper {
                 .remoteAddress(HUB_URL)
                 .create();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        wait = new WebDriverWait(driver, Duration.ofSeconds(20));
     }
 
     public void tearDown() {
@@ -91,6 +116,8 @@ public class PageHelper {
     public void testLogic() {
         LOGGER.info("Running the test...");
         driver.get("https://www.animeddirect.co.uk/");
+        driver.findElement(By.cssSelector("button#onetrust-accept-btn-handler")).click();
+
         LOGGER.info("Title of the page is: {}", driver.getTitle());
         Assert.assertEquals("Page title is not correct", "Pet Foods | Pet Prescription Medication | Pet Accessories", driver.getTitle());
         LOGGER.info("Test completed...");

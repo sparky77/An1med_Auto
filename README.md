@@ -1,4 +1,4 @@
-# Animed :: Cucumber-Java Automation Framework  
+# Animed :: Cucumber-Java Automation CI QA FW
 
 ## Introduction
 Automation Framework GOAL: demonstrate CI using Java, Selenium & Cucumber.  The Framework's repo, when commit detected, a webhook will then envoke a Maven Jenkins job to run a remote driver connected to BrowserStack to run some basic tests.

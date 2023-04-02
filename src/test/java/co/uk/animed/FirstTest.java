@@ -21,7 +21,7 @@ public class FirstTest {
     private static final String HUB_URL = "https://marcussmith_tdujoc:nd7Yfv4AuWaaYzq3S8NM@hub-cloud.browserstack.com/wd/hub";
     private WebDriver webDriver;
 
-    //@Before
+    @Before
     public void setUp() {
         LOGGER.info("Setting up the test...");
         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
@@ -45,7 +45,7 @@ public class FirstTest {
         webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
-    //@After
+    @After
     public void tearDown() {
         LOGGER.info("Tearing down the test...");
         webDriver.quit();
@@ -53,7 +53,7 @@ public class FirstTest {
 
     //@Test
     public void openBrowserTest() {
-        setUp();
+        //setUp();
 
         LOGGER.info("Running the test...");
         webDriver.get("https://www.animeddirect.co.uk/");
@@ -61,7 +61,7 @@ public class FirstTest {
         Assert.assertEquals("Page title is not correct", "Pet Foods | Pet Prescription Medication | Pet Accessories", webDriver.getTitle());
         LOGGER.info("Test completed...");
 
-        tearDown();
+        //tearDown();
     }
 }
 

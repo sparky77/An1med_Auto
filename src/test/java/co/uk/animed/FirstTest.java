@@ -59,6 +59,7 @@ public class FirstTest {
         webDriver.get("https://www.animeddirect.co.uk/");
         LOGGER.info("Title of the page is: {}", webDriver.getTitle());
         Assert.assertEquals("Page title is not correct", "Pet Foods | Pet Prescription Medication | Pet Accessories", webDriver.getTitle());
+        LOGGER.info("Test completed...");
 
         tearDown();
     }

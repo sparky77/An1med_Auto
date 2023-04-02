@@ -1,6 +1,5 @@
 package co.uk.animed;
 
-import co.uk.animed.FirstTest;
 import io.cucumber.java.en.Given;
 
 public class StepDef {

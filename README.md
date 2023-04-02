@@ -1,8 +1,13 @@
 # Animed :: Cucumber-Java Automation CI QA FW
 
 ## Introduction
-Automation Framework GOAL: demonstrate CI using Java, Selenium & Cucumber.  The Framework's repo, when commit detected, a webhook will then envoke a Maven Jenkins job to run a remote driver connected to BrowserStack to run some basic tests.
-
+Automation Framework GOAL: 
++ AnimedDirect :: Quality Assurance
++ QA Automation CI
++ Java, Selenium & Cucumber [Test Core - Maven/Junit]
++ AWS cloud based Linux instance (Jenkins, Java, Maven, GIT)
++ Jenkins used as Webhooked Automation Server (Trigged from build commit)
++ Jenkins Job :: Remote server (BrowserStack) Cloud Based automation execution
 
 ## TOOLS
 JAVA, MAVEN, CUCUMBER, JUNIT, SELENIUM, AWS EC2, JENKINS, GITHUB REPO (W/WebHooks), BROWSERSTACK
@@ -42,7 +47,8 @@ JAVA, MAVEN, CUCUMBER, JUNIT, SELENIUM, AWS EC2, JENKINS, GITHUB REPO (W/WebHook
 
 ![Screenshot of coverage diagram for a bit of sizzle.](https://cdn-icons-png.flaticon.com/512/17/17470.png)
 
-# DEVICE TESTING COVERAGE
+# DEVICE TESTING COVERAGE (Recommendation)
+BrowserStack Licence maybe required. 
 |**DESKTOP (Chrome latest + Windows 11)**|
 |--|
 |REGRESSION / SMOKE| |[Date %]()|
@@ -71,3 +77,6 @@ mvn test
 
 This runs Cucumber features using Cucumber's JUnit Platform Engine. The `Suite`
 annotation on the `RunCucumberTest` class tells JUnit to kick off Cucumber.
+
+## QA AUTOMATION ROADMAP
+TBD

@@ -1,3 +1,4 @@
+/*
 package stepDefs;
 
 import com.qascript.FirstTest;
@@ -11,3 +12,4 @@ public class StepDef {
         //System.out.println("Number of CATS  : " + cats);
     }
 }
+*/

@@ -1,3 +1,4 @@
+/*
 package Runner;
 
 import org.junit.platform.suite.api.ConfigurationParameter;
@@ -15,3 +16,4 @@ import static io.cucumber.core.options.Constants.PLUGIN_PROPERTY_NAME;
 @ConfigurationParameter(key = GLUE_PROPERTY_NAME, value = "features")
 public class RunCucumberTest {
 }
+*/

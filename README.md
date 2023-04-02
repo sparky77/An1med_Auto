@@ -33,7 +33,26 @@ JAVA, MAVEN, CUCUMBER, JUNIT, SELENIUM, AWS EC2, JENKINS, GITHUB REPO (W/WebHook
 
 ### Device Coverage
 
-![Screenshot of a comment on a GitHub issue showing an image, added in the Markdown, of an Octocat smiling and raising a tentacle.](https://myoctocat.com/assets/images/base-octocat.svg)
+![Screenshot of coverage diagram for a bit of sizzle.](https://cdn-icons-png.flaticon.com/512/17/17470.png)
+
+# DEVICE TESTING COVERAGE
+|**DESKTOP (Chrome latest + Windows 11)**|
+|--|
+|REGRESSION / SMOKE| |[Date %]()|
+|LIVE||[]()|
+|**DESKTOP COMPATIBILITY**||
+|Windows (OS:11 Browser:Edge)| |[Date %]()|
+|Windows (OS:11 Browser:Firefox)| |[Date %]()|
+|Mac (OS:14 (Big Sur) Browser:Safari)| |[Date %]()|
+|**MOBILE**||
+|iPhone 12 Pro (OS:14.3 Browser:Safari)| |[Date %]()|
+|iPhone 13 (OS:15 Browser:Safari)| |[Date %]()|
+|iPhone 14 (OS:16 Browser:Safari)| |[Date %]()|
+|Samaung Galaxy S20 (OS:10 Browser:Chrome)| |[Date %]()|
+|Samaung Galaxy S22 + (OS:12 Browser:Samsung)| |[Date %]()|
+|**TABLET**||
+|Samsung Galaxy Tab S7 (OS:10 Browser:Chrome)| |[Date %]()|
+|iPad Air 4 (OS:14 Browser:Safari)||[Date %]()|
 
 ## Get the code
 

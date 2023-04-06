@@ -1,7 +1,7 @@
 # Animed :: Cucumber-Java Automation CI QA FW
 
 ## Introduction
-Automation Framework GOAL: 
+Automation Framework GOALS: 
 + AnimedDirect :: Quality Assurance
 + QA Automation CI
 + Java, Selenium & Cucumber [Test Core - Maven/Junit]
@@ -18,7 +18,7 @@ JAVA, MAVEN, CUCUMBER, JUNIT, SELENIUM, AWS EC2, JENKINS, GITHUB REPO (W/WebHook
 
 - Accept Cookies
 - Close marketing form
-- Click searh trigger (prime search method)
+- Click search trigger (prime search method)
 
 ## Tests 
 

@@ -64,32 +64,26 @@ public class PageHelper {
     }
 
     public void search(String searchTerm) {
-        // below is for mobile implementation
-/*        try {
-            click(By.cssSelector("#search_mini_form > div.field.search > label > span"));
-        } catch (Exception e) {
-            System.out.println("**** Couldn't find Mobile search icon - Desktop or Error");
-        }*/
 
-        click(By.cssSelector("#search_mini_form > div.field.search > label"));
-        click(By.cssSelector("#search_mini_form > div.field.search > label"));
+        // Mobile double click required on search icon
+        //click(By.cssSelector("#search_mini_form > div.field.search > label"));
+        //click(By.cssSelector("#search_mini_form > div.field.search > label"));
 
-        type(By.cssSelector("input[id='search']"), searchTerm);
+        //type(By.cssSelector("input[id='search']"), searchTerm);
+
+
         driver.findElement(By.cssSelector("input[id='search']")).submit();
+
+
         // below action search button is for desktop only
-        //click(By.cssSelector("button[class='action search']"));
+        click(By.cssSelector("button[class='action search']"));
         Assert.assertEquals("Page title is not correct", "Search results for: '" +searchTerm+ "'", driver.getTitle());
     }
 
 
     public void parseProductData(){
-        WebElement ProductBlock = null;
-        try {
-            ProductBlock = driver.findElement(By.cssSelector("#amasty-shopby-product-list > div.category-products.products.wrapper.grid.products-grid > ol"));
-        } catch (Exception e) {
-            System.out.println("** Switched to mobile product scrape");
-            ProductBlock = driver.findElement(By.cssSelector(".products.wrapper.list.products-list > ol"));
-        }
+        WebElement ProductBlock = driver.findElement(By.cssSelector(".products.wrapper.list.products-list > ol"));
+
         List<WebElement> products = ProductBlock.findElements(By.cssSelector("li.item.product.product-item"));
         System.out.println("**** PLP INFORMATION **** ");
         System.out.println("**** PAGE TITLE : " + driver.getTitle());
@@ -139,16 +133,16 @@ public class PageHelper {
         desiredCapabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
 
         //iPhone 12 (iOS 14.1 & Chrome)
-        desiredCapabilities.setCapability("osVersion", "14");
+/*        desiredCapabilities.setCapability("osVersion", "14");
         desiredCapabilities.setCapability("deviceName", "iPhone 12");
-        desiredCapabilities.setCapability("realMobile", "true");
+        desiredCapabilities.setCapability("realMobile", "true");*/
 
         // Windows 11 (Chrome 100)
-/*        desiredCapabilities.setCapability("browser", "chrome");
+        desiredCapabilities.setCapability("browser", "chrome");
         desiredCapabilities.setCapability("browser_version", "100");
         desiredCapabilities.setCapability("os", "windows");
         desiredCapabilities.setCapability("os_version", "11");
-        desiredCapabilities.setCapability("resolution", "2048x1536");*/
+        desiredCapabilities.setCapability("resolution", "2048x1536");
 
         desiredCapabilities.setCapability("seleniumVersion", "4.8.1");
         desiredCapabilities.setCapability("project", "ANIMED_CI");

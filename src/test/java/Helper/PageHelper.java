@@ -129,6 +129,7 @@ public class PageHelper {
     }
 
     public void tearDown() {
+        System.out.println("************ SYS OUT Tearing down the test !!! ");
         LOGGER.info("Tearing down the test...");
         driver.quit();
     }

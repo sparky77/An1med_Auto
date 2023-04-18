@@ -16,6 +16,9 @@ public class  Customer extends PageHelper {
         switch (actions) {
             case SEARCH:
                 //click(By.cssSelector("testing"));
+                System.out.println("*******************************");
+                System.out.println("Customer is performing a search");
+                System.out.println("Customer is performing a search");
                 System.out.println("Customer is performing a search");
                 break;
             case ADDTOCART:
@@ -29,6 +32,11 @@ public class  Customer extends PageHelper {
 
     @Test
     public void enumTest(){
+        actions = CustomerActions.SEARCH;
+        customerActions();
+    }
+
+    public void runSearch(){
         actions = CustomerActions.SEARCH;
         customerActions();
     }

@@ -1,4 +1,4 @@
-# Test Plan for Animed Direct Automation
+# Automation Test Plan for Animed Direct
 ## Introduction
 The purpose of this document is to outline the testing approach for the automation of the Animed Direct website.
 

@@ -5,7 +5,7 @@ import io.cucumber.java.en.Then;
 
 public class StepDef {
     FirstTest firstTest = new FirstTest();
-    @Given("Customer visits Animeddirect website and verifs page title")
+    @Given("Customer visits Animeddirect website and verify page title")
     public void customerVisitsAnimedirectAndVerifysTitle() {
         firstTest.openBrowserTest();
     }

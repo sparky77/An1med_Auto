@@ -1,5 +1,6 @@
 package Helper;
 
+import Models.Customer;
 import co.uk.animed.FirstTest;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
@@ -55,6 +56,9 @@ public class PageHelper {
     public void customerActions(String action, String value) {
         switch (action.toLowerCase()) {
             case "search":
+                Customer customer = new Customer();
+                customer.runSearch();
+                //customer.customerActions();
                 search(value);
                 break;
             default:
@@ -63,6 +67,7 @@ public class PageHelper {
         }
     }
 
+    //TODO Mobile and Desktop adaptability
     public void search(String searchTerm) {
 
         // Mobile double click required on search icon
@@ -78,15 +83,14 @@ public class PageHelper {
         Assert.assertEquals("Page title is not correct", "Search results for: '" +searchTerm+ "'", driver.getTitle());
     }
 
-
+    //TODO Moved into Product Class
     public void parseProductData(){
+        // ProductBlock has two differing CMS blocks - first for desktop, second for mobile.
         WebElement ProductBlock = driver.findElement(By.cssSelector(".products.wrapper.list.products-list > ol,div.category-products.products.wrapper.grid.products-grid > ol"));
-
+        // WebElement split into individual product data blocks
         List<WebElement> products = ProductBlock.findElements(By.cssSelector("li.item.product.product-item"));
-        System.out.println("**** PLP INFORMATION **** ");
-        System.out.println("**** PAGE TITLE : " + driver.getTitle());
-        System.out.println("**** # PRODUCTS : " + products.size());
-        System.out.println("**** URL : " + driver.getCurrentUrl());
+
+        DisplayPLPDataSummary(products);
         for (WebElement product : products) {
             String productName = product.findElement(By.cssSelector("div.product.name.product-item-name.category-products__name")).getText();
             String price = product.findElement(By.cssSelector("div.price-box.price-final_price")).getText();
@@ -98,6 +102,17 @@ public class PageHelper {
         }
     }
 
+    private void DisplayPLPDataSummary(List<WebElement> products) {
+        System.out.println();
+        System.out.println("**** PLP INFORMATION **** ");
+        System.out.println("**** PAGE TITLE : " + driver.getTitle());
+        System.out.println("**** # PRODUCTS : " + products.size());
+        System.out.println("**** URL : " + driver.getCurrentUrl());
+        System.out.println();
+    }
+
+
+    //TODO turn into @Before class
     private void pageStartUpTasks() {
         // accept cookies
         acceptCookies();
@@ -118,6 +133,8 @@ public class PageHelper {
         wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
 
+    //TODO @Before requirement
+    //TODO set Desktop / Mobile type with ENUM Cat ? Feed into future switch statements
     public void setUp() {
 
         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
@@ -127,7 +144,6 @@ public class PageHelper {
         chromeOptions.addArguments("--disable-web-security");
         chromeOptions.addArguments("--test-type");
         chromeOptions.addArguments("allow-running-insecure-content");
-
         desiredCapabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
 
         //iPhone 12 (iOS 14.1 & Chrome)

@@ -65,21 +65,24 @@ public class PageHelper {
 
     public void search(String searchTerm) {
         // below is for mobile implementation
-        try {
+/*        try {
             click(By.cssSelector("#search_mini_form > div.field.search > label > span"));
         } catch (Exception e) {
             System.out.println("**** Couldn't find Mobile search icon - Desktop or Error");
-        }
+        }*/
+
+        click(By.cssSelector("#search_mini_form > div.field.search > label > span"));
         type(By.cssSelector("input[id='search']"), searchTerm);
         click(By.cssSelector("button[class='action search']"));
         Assert.assertEquals("Page title is not correct", "Search results for: '" +searchTerm+ "'", driver.getTitle());
     }
 
+
     public void parseProductData(){
         WebElement ProductBlock = driver.findElement(By.cssSelector("#amasty-shopby-product-list > div.category-products.products.wrapper.grid.products-grid > ol"));
         List<WebElement> products = ProductBlock.findElements(By.cssSelector("li.item.product.product-item"));
         System.out.println("**** PLP INFORMATION **** ");
-        System.out.println("**** PAGE TITLE : " + driver.getTitle());;
+        System.out.println("**** PAGE TITLE : " + driver.getTitle());
         System.out.println("**** # PRODUCTS : " + products.size());
         System.out.println("**** URL : " + driver.getCurrentUrl());
         for (WebElement product : products) {

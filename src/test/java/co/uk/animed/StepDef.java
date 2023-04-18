@@ -1,9 +1,7 @@
 package co.uk.animed;
 
-import Models.CustomerPage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import org.openqa.selenium.WebDriver;
 
 public class StepDef {
     FirstTest firstTest = new FirstTest();

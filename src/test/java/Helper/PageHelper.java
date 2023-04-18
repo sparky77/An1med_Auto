@@ -16,7 +16,6 @@ import org.slf4j.LoggerFactory;
 
 import java.time.Duration;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 public class PageHelper {
     public WebDriver driver;
@@ -73,15 +72,16 @@ public class PageHelper {
     public void parseProductData(){
         WebElement ProductBlock = driver.findElement(By.cssSelector("#amasty-shopby-product-list > div.category-products.products.wrapper.grid.products-grid > ol"));
         List<WebElement> products = ProductBlock.findElements(By.cssSelector("li.item.product.product-item"));
-        System.out.println("Number of products is: " + products.size());
+        System.out.println("**** PLP INFORMATION **** ");
+        System.out.println("**** PAGE TITLE : " + driver.getTitle());;
+        System.out.println("**** # PRODUCTS : " + products.size());
+        System.out.println("**** URL : " + driver.getCurrentUrl());
         for (WebElement product : products) {
             String productName = product.findElement(By.cssSelector("div.product.name.product-item-name.category-products__name")).getText();
-            //String productDescription = product.findElement(By.cssSelector("div > div > div.product-item-inner > div.product.description.product-item-description")).getText();
             String price = product.findElement(By.cssSelector("div.price-box.price-final_price")).getText();
 
             System.out.println("----------------");
             System.out.println(productName);
-            //System.out.println(productDescription);
             System.out.println(price);
             System.out.println("----------------");
         }
@@ -89,7 +89,7 @@ public class PageHelper {
 
     private void pageStartUpTasks() {
         // accept cookies
-        driver.findElement(By.cssSelector("button#onetrust-accept-btn-handler")).click();
+        acceptCookies();
         // close marketing pop-up and select search trigger to search available for input.
         try {
             click(By.cssSelector(".frel_button-close"));
@@ -97,6 +97,10 @@ public class PageHelper {
         } catch (Exception e) {
             System.out.println("Couldn't find / click frel button close");
         }
+    }
+
+    private void acceptCookies() {
+        driver.findElement(By.cssSelector("button#onetrust-accept-btn-handler")).click();
     }
 
     public void waitForLoad(By locator) {
@@ -131,7 +135,7 @@ public class PageHelper {
     }
 
     public void tearDown() {
-        System.out.println("************ SYS OUT Tearing down the test !!! ");
+        System.out.println("************ TESTING COMPLETED ******************");
         LOGGER.info("Tearing down the test...");
         driver.quit();
     }

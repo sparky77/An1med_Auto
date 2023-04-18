@@ -127,9 +127,9 @@ public class PageHelper {
                 .create();
         //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        driver.manage().window().maximize();
     }
 
-    @After
     public void tearDown() {
         System.out.println("************ SYS OUT Tearing down the test !!! ");
         LOGGER.info("Tearing down the test...");

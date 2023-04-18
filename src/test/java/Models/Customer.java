@@ -10,8 +10,6 @@ public class  Customer extends PageHelper {
     ADDTOCART, SEARCH
 }
 
-
-
     CustomerActions actions;
 
     public void customerActions() {

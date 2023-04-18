@@ -108,7 +108,7 @@ public class PageHelper {
     }
 
     public void setUp() {
-        LOGGER.info("Setting up the test...");
+
         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("--ignore-ssl-errors=yes");
@@ -116,20 +116,28 @@ public class PageHelper {
         chromeOptions.addArguments("--disable-web-security");
         chromeOptions.addArguments("--test-type");
         chromeOptions.addArguments("allow-running-insecure-content");
+
         desiredCapabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
-        desiredCapabilities.setCapability("browser", "chrome");
+
+        desiredCapabilities.setCapability("osVersion", "14");
+        desiredCapabilities.setCapability("deviceName", "iPhone 12");
+        desiredCapabilities.setCapability("realMobile", "true");
+
+/*        desiredCapabilities.setCapability("browser", "chrome");
         desiredCapabilities.setCapability("browser_version", "100");
         desiredCapabilities.setCapability("os", "windows");
         desiredCapabilities.setCapability("os_version", "11");
+        desiredCapabilities.setCapability("resolution", "2048x1536");*/
+
         desiredCapabilities.setCapability("seleniumVersion", "4.8.1");
         desiredCapabilities.setCapability("project", "ANIMED_CI");
-        desiredCapabilities.setCapability("resolution", "2048x1536");
+
         desiredCapabilities.setCapability("build","ANIMED DIRECT" + " :: AUTOMATION CI");
+
         driver = WebDriverManager.chromedriver()
                 .capabilities(desiredCapabilities)
                 .remoteAddress(HUB_URL)
                 .create();
-        //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         driver.manage().window().maximize();
     }

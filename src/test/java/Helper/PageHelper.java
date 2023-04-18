@@ -71,7 +71,7 @@ public class PageHelper {
             System.out.println("**** Couldn't find Mobile search icon - Desktop or Error");
         }*/
 
-        click(By.cssSelector("#search_mini_form > div.field.search > label > span"));
+        click(By.cssSelector("#search_mini_form > div.field.search > label"));
         type(By.cssSelector("input[id='search']"), searchTerm);
         driver.findElement(By.cssSelector("input[id='search']")).submit();
         // below action search button is for desktop only

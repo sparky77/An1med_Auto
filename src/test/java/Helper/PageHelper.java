@@ -83,7 +83,13 @@ public class PageHelper {
 
 
     public void parseProductData(){
-        WebElement ProductBlock = driver.findElement(By.cssSelector("#amasty-shopby-product-list > div.category-products.products.wrapper.grid.products-grid > ol"));
+        WebElement ProductBlock = null;
+        try {
+            ProductBlock = driver.findElement(By.cssSelector("#amasty-shopby-product-list > div.category-products.products.wrapper.grid.products-grid > ol"));
+        } catch (Exception e) {
+            System.out.println("** Switched to mobile product scrape");
+            ProductBlock = driver.findElement(By.cssSelector(".products.wrapper.list.products-list > ol"));
+        }
         List<WebElement> products = ProductBlock.findElements(By.cssSelector("li.item.product.product-item"));
         System.out.println("**** PLP INFORMATION **** ");
         System.out.println("**** PAGE TITLE : " + driver.getTitle());

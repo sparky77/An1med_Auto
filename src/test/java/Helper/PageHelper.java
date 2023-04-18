@@ -72,6 +72,8 @@ public class PageHelper {
         }*/
 
         click(By.cssSelector("#search_mini_form > div.field.search > label"));
+        click(By.cssSelector("#search_mini_form > div.field.search > label"));
+
         type(By.cssSelector("input[id='search']"), searchTerm);
         driver.findElement(By.cssSelector("input[id='search']")).submit();
         // below action search button is for desktop only

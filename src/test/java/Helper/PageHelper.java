@@ -104,7 +104,7 @@ public class PageHelper {
         // close marketing pop-up and select search trigger to search available for input.
         try {
             click(By.cssSelector(".frel_button-close"));
-            click(By.cssSelector("#search-trigger"));
+            //click(By.cssSelector("#search-trigger"));
         } catch (Exception e) {
             System.out.println("Couldn't find / click frel button close");
         }

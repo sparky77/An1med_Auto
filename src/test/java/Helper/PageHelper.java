@@ -64,6 +64,12 @@ public class PageHelper {
     }
 
     public void search(String searchTerm) {
+        // below is for mobile implementation
+        try {
+            click(By.cssSelector("#search_mini_form > div.field.search > label > span"));
+        } catch (Exception e) {
+            System.out.println("**** Couldn't find Mobile search icon - Desktop or Error");
+        }
         type(By.cssSelector("input[id='search']"), searchTerm);
         click(By.cssSelector("button[class='action search']"));
         Assert.assertEquals("Page title is not correct", "Search results for: '" +searchTerm+ "'", driver.getTitle());
@@ -119,10 +125,12 @@ public class PageHelper {
 
         desiredCapabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
 
+        //iPhone 12 (iOS 14.1 & Chrome)
         desiredCapabilities.setCapability("osVersion", "14");
         desiredCapabilities.setCapability("deviceName", "iPhone 12");
         desiredCapabilities.setCapability("realMobile", "true");
 
+        // Windows 11 (Chrome 100)
 /*        desiredCapabilities.setCapability("browser", "chrome");
         desiredCapabilities.setCapability("browser_version", "100");
         desiredCapabilities.setCapability("os", "windows");

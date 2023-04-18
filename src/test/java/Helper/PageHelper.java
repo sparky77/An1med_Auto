@@ -73,7 +73,9 @@ public class PageHelper {
 
         click(By.cssSelector("#search_mini_form > div.field.search > label > span"));
         type(By.cssSelector("input[id='search']"), searchTerm);
-        click(By.cssSelector("button[class='action search']"));
+        driver.findElement(By.cssSelector("input[id='search']")).submit();
+        // below action search button is for desktop only
+        //click(By.cssSelector("button[class='action search']"));
         Assert.assertEquals("Page title is not correct", "Search results for: '" +searchTerm+ "'", driver.getTitle());
     }
 

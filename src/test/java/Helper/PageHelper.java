@@ -80,7 +80,7 @@ public class PageHelper {
 
 
     public void parseProductData(){
-        WebElement ProductBlock = driver.findElement(By.cssSelector(".products.wrapper.list.products-list > ol"));
+        WebElement ProductBlock = driver.findElement(By.cssSelector(".products.wrapper.list.products-list > ol,div.category-products.products.wrapper.grid.products-grid > ol"));
 
         List<WebElement> products = ProductBlock.findElements(By.cssSelector("li.item.product.product-item"));
         System.out.println("**** PLP INFORMATION **** ");

@@ -57,9 +57,9 @@ public class PageHelper {
         switch (action.toLowerCase()) {
             case "search":
                 Customer customer = new Customer();
-                customer.runSearch();
+                customer.runSearch(value);
                 //customer.customerActions();
-                search(value);
+                //search(value);
                 break;
             default:
                 System.out.println("Invalid customer action: " + action);
@@ -76,7 +76,6 @@ public class PageHelper {
 
         type(By.cssSelector("input[id='search']"), searchTerm);
         //driver.findElement(By.cssSelector("input[id='search']")).submit();
-
 
         // below action search button is for desktop only
         click(By.cssSelector("button[class='action search']"));

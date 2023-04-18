@@ -116,7 +116,7 @@ public class PageHelper {
         desiredCapabilities.setCapability("browser_version", "100");
         desiredCapabilities.setCapability("os", "windows");
         desiredCapabilities.setCapability("os_version", "11");
-        desiredCapabilities.setCapability("seleniumVersion", "4.2.2");
+        desiredCapabilities.setCapability("seleniumVersion", "4.8.1");
         desiredCapabilities.setCapability("project", "ANIMED_CI");
         desiredCapabilities.setCapability("resolution", "2048x1536");
         desiredCapabilities.setCapability("build","ANIMED DIRECT" + " :: AUTOMATION CI");

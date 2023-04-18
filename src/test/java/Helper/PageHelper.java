@@ -56,10 +56,10 @@ public class PageHelper {
     public void customerActions(String action, String value) {
         switch (action.toLowerCase()) {
             case "search":
-                Customer customer = new Customer();
-                customer.runSearch(value);
+                //Customer customer = new Customer();
+                //customer.runSearch(value);
                 //customer.customerActions();
-                //search(value);
+                search(value);
                 break;
             default:
                 System.out.println("Invalid customer action: " + action);

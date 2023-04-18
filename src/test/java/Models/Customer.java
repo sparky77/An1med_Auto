@@ -15,7 +15,10 @@ public class  Customer extends PageHelper {
     public void customerActions(String customerAction) {
         switch (actions) {
             case SEARCH:
-                search(customerAction);
+                System.out.println("*******************************");
+                System.out.println("Customer is performing a search");
+                System.out.println("Customer is performing a search");
+                //search(customerAction);
                 //click(By.cssSelector("testing"));
                 System.out.println("*******************************");
                 System.out.println("Customer is performing a search");

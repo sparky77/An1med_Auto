@@ -1,8 +1,8 @@
 package Helper;
 
 import co.uk.animed.FirstTest;
-import io.cucumber.java.After;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.junit.After;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

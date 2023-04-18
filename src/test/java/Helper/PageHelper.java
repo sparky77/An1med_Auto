@@ -1,6 +1,7 @@
 package Helper;
 
 import co.uk.animed.FirstTest;
+import io.cucumber.java.After;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -128,6 +129,7 @@ public class PageHelper {
         wait = new WebDriverWait(driver, Duration.ofSeconds(20));
     }
 
+    @After
     public void tearDown() {
         System.out.println("************ SYS OUT Tearing down the test !!! ");
         LOGGER.info("Tearing down the test...");

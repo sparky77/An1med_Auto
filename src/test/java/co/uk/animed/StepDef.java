@@ -10,6 +10,7 @@ public class StepDef {
     @Given("Customer visits Animeddirect website and verify page title")
     public void customerVisitsAnimedirectAndVerifysTitle() {
         firstTest.openBrowserTest();
+        System.out.println("testing for CI purposes.");
     }
 
     @Test

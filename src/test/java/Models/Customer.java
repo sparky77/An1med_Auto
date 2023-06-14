@@ -18,6 +18,7 @@ public class  Customer extends PageHelper {
                 System.out.println("*******************************");
                 System.out.println("Customer is performing a search");
                 System.out.println("Customer is performing a search");
+                System.out.println("Testing for ci");
                 //search(customerAction);
                 //click(By.cssSelector("testing"));
 

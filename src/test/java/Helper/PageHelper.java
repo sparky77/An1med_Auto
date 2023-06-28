@@ -153,6 +153,9 @@ public class PageHelper {
 
         // Windows 11 (Chrome 100)
         String buildName = System.getenv("BROWSERSTACK_BUILD_NAME");
+        String browserstackLocal = System.getenv("BROWSERSTACK_LOCAL");
+        String browserstackLocalIdentifier = System.getenv("BROWSERSTACK_LOCAL_IDENTIFIER");
+
         desiredCapabilities.setCapability("browser", "chrome");
         desiredCapabilities.setCapability("browser_version", "100");
         desiredCapabilities.setCapability("os", "windows");
@@ -161,6 +164,8 @@ public class PageHelper {
 
         desiredCapabilities.setCapability("seleniumVersion", "4.8.1");
         desiredCapabilities.setCapability("project", "ANIMED_CI");
+        desiredCapabilities.setCapability("browserstack.local", browserstackLocal);
+        desiredCapabilities.setCapability("browserstack.localIdentifier", browserstackLocalIdentifier);
 
         //desiredCapabilities.setCapability("build","ANIMED DIRECT" + " :: AUTOMATION CI");
         //desiredCapabilities.setCapability("build","Intergration Jenkins BS Plugin Build");

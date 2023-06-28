@@ -36,6 +36,23 @@
 
     <dependencies>
 
+        <!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-java-commons -->
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-java-commons</artifactId>
+            <version>2.22.2</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-junit4 -->
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-junit4</artifactId>
+            <version>2.22.2</version>
+            <scope>test</scope>
+        </dependency>
+
+
+
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>

@@ -28,7 +28,7 @@
             <dependency>
                 <groupId>io.cucumber</groupId>
                 <artifactId>cucumber-bom</artifactId>
-                <version>7.11.2</version>
+                <version>7.12.1</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -121,10 +121,27 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0</version>
                 <configuration>
+                    <argLine>
+                        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+                        -Dcucumber.options="--plugin io.qameta.allure.cucumber4jvm.AllureCucumber4Jvm"
+                    </argLine>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.aspectj</groupId>
+                        <artifactId>aspectjweaver</artifactId>
+                        <version>${aspectj.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+<!--                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0</version>
+                <configuration>
                     <properties>
-                        <!-- Work around. Surefire does not include enough
+                        &lt;!&ndash; Work around. Surefire does not include enough
                              information to disambiguate between different
-                             examples and scenarios. -->
+                             examples and scenarios. &ndash;&gt;
                         <configurationParameters>
                             cucumber.junit-platform.naming-strategy=long
                         </configurationParameters>
@@ -134,12 +151,12 @@
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                     </argLine>
-<!--                    <properties>
+&lt;!&ndash;                    <properties>
                         <property>
                             <name>listener</name>
                             <value>io.qameta.allure.junit4.AllureJunit4</value>
                         </property>
-                    </properties>-->
+                    </properties>&ndash;&gt;
                 </configuration>
                 <dependencies>
                     <dependency>
@@ -147,11 +164,10 @@
                         <artifactId>aspectjweaver</artifactId>
                         <version>${aspectj.version}</version>
                     </dependency>
-                </dependencies>
+                </dependencies>-->
 
 
 
-            </plugin>
         </plugins>
     </build>
 </project>

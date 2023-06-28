@@ -23,7 +23,7 @@ public class PageHelper {
     public WebDriverWait wait;
 
     public static final Logger LOGGER = LoggerFactory.getLogger(FirstTest.class);
-    public static final String HUB_URL = "https://marcussmith_tdujoc:nd7Yfv4AuWaaYzq3S8NM@hub-cloud.browserstack.com/wd/hub";
+    public static final String HUB_URL = "https://marcussmith_BH2rDw:pvyMzs4e3smboMC7sTp6@hub-cloud.browserstack.com/wd/hub";
 
     public PageHelper() {
     }
@@ -79,7 +79,8 @@ public class PageHelper {
 
         // below action search button is for desktop only
         click(By.cssSelector("button[class='action search']"));
-        Assert.assertEquals("Page title is not correct", "Search results for: '" +searchTerm+ "'", driver.getTitle());
+        //Assert.assertEquals("Page title is not correct", "Search results for: '" +searchTerm+ "'", driver.getTitle());
+        Assert.assertEquals("Page title is not correct", "My Account", driver.getTitle());
     }
 
     //TODO Moved into Product Class

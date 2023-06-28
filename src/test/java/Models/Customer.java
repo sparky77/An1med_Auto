@@ -24,8 +24,6 @@ public class  Customer extends PageHelper {
 
                 System.out.println("*******************************");
                 System.out.println("Customer is performing a search");
-                System.out.println("Customer is performing a search");
-                System.out.println("Customer is performing a search");
                 break;
             case ADDTOCART:
                 System.out.println("Customer is adding product to cart");

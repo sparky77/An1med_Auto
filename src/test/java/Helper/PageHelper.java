@@ -168,8 +168,8 @@ public class PageHelper {
 
         desiredCapabilities.setCapability("seleniumVersion", "4.8.1");
         desiredCapabilities.setCapability("project", "ANIMED_CI");
-        desiredCapabilities.setCapability("browserstack.local", "true");
-        //desiredCapabilities.setCapability("browserstack.localIdentifier", "false");
+        desiredCapabilities.setCapability("browserstack.local", browserstackLocal);
+        desiredCapabilities.setCapability("browserstack.localIdentifier", browserstackLocalIdentifier);
 
         //desiredCapabilities.setCapability("build","ANIMED DIRECT" + " :: AUTOMATION CI");
         //desiredCapabilities.setCapability("build","Intergration Jenkins BS Plugin Build");

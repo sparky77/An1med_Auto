@@ -155,12 +155,14 @@ public class PageHelper {
         String buildName = System.getenv("BROWSERSTACK_BUILD_NAME");
         String browserstackLocal = System.getenv("BROWSERSTACK_LOCAL");
         String browserstackLocalIdentifier = System.getenv("BROWSERSTACK_LOCAL_IDENTIFIER");
+        System.out.println("Build Name: " + buildName);
 
         desiredCapabilities.setCapability("browser", "chrome");
         desiredCapabilities.setCapability("browser_version", "100");
         desiredCapabilities.setCapability("os", "windows");
         desiredCapabilities.setCapability("os_version", "11");
         desiredCapabilities.setCapability("resolution", "2048x1536");
+
 
         desiredCapabilities.setCapability("seleniumVersion", "4.8.1");
         desiredCapabilities.setCapability("project", "ANIMED_CI");

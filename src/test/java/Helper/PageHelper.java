@@ -157,6 +157,7 @@ public class PageHelper {
         String browserstackLocalIdentifier = System.getenv("BROWSERSTACK_LOCAL_IDENTIFIER");
         //  String buildName = System.getenv("JENKINS_LABEL");
         System.out.println("Build Name: " + buildName);
+        System.out.println("");
 
         desiredCapabilities.setCapability("browser", "chrome");
         desiredCapabilities.setCapability("browser_version", "100");

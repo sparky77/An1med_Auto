@@ -162,6 +162,7 @@ public class PageHelper {
         desiredCapabilities.setCapability("project", "ANIMED_CI");
 
         desiredCapabilities.setCapability("build","ANIMED DIRECT" + " :: AUTOMATION CI");
+        desiredCapabilities.setCapability("BROWSERSTACK_BUILD_NAME","Intergration Jenkins BS Plugin Build");
 
         driver = WebDriverManager.chromedriver()
                 .capabilities(desiredCapabilities)

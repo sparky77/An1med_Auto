@@ -152,10 +152,10 @@ public class PageHelper {
         desiredCapabilities.setCapability("realMobile", "true");*/
 
         // Windows 11 (Chrome 100)
-        // .String buildName = System.getenv("BROWSERSTACK_BUILD_NAME");
+        String buildName = System.getenv("BROWSERSTACK_BUILD_NAME");
         String browserstackLocal = System.getenv("BROWSERSTACK_LOCAL");
         String browserstackLocalIdentifier = System.getenv("BROWSERSTACK_LOCAL_IDENTIFIER");
-        String buildName = System.getenv("JENKINS_LABEL");
+        //String buildName = System.getenv("JENKINS_LABEL");
         System.out.println("Build Name: " + buildName);
 
         desiredCapabilities.setCapability("browser", "chrome");
@@ -167,7 +167,7 @@ public class PageHelper {
 
         desiredCapabilities.setCapability("seleniumVersion", "4.8.1");
         desiredCapabilities.setCapability("project", "ANIMED_CI");
-        desiredCapabilities.setCapability("browserstack.local", "false");
+        desiredCapabilities.setCapability("browserstack.local", "true");
         //desiredCapabilities.setCapability("browserstack.localIdentifier", "false");
 
         //desiredCapabilities.setCapability("build","ANIMED DIRECT" + " :: AUTOMATION CI");

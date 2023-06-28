@@ -37,20 +37,20 @@
 
     <dependencies>
 
-        <!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-java-commons -->
+<!--        &lt;!&ndash; https://mvnrepository.com/artifact/io.qameta.allure/allure-java-commons &ndash;&gt;
         <dependency>
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-java-commons</artifactId>
             <version>2.22.2</version>
-        </dependency>
+        </dependency>-->
 
-        <!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-junit4 -->
+        <!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-cucumber-jvm -->
         <dependency>
             <groupId>io.qameta.allure</groupId>
-            <artifactId>allure-junit4</artifactId>
-            <version>2.22.2</version>
-            <scope>test</scope>
+            <artifactId>allure-cucumber-jvm</artifactId>
+            <version>2.20.1</version>
         </dependency>
+
 
 
 

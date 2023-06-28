@@ -152,6 +152,7 @@ public class PageHelper {
         desiredCapabilities.setCapability("realMobile", "true");*/
 
         // Windows 11 (Chrome 100)
+        String buildName = System.getenv("BROWSERSTACK_BUILD_NAME");
         desiredCapabilities.setCapability("browser", "chrome");
         desiredCapabilities.setCapability("browser_version", "100");
         desiredCapabilities.setCapability("os", "windows");
@@ -161,8 +162,9 @@ public class PageHelper {
         desiredCapabilities.setCapability("seleniumVersion", "4.8.1");
         desiredCapabilities.setCapability("project", "ANIMED_CI");
 
-        desiredCapabilities.setCapability("build","ANIMED DIRECT" + " :: AUTOMATION CI");
-        desiredCapabilities.setCapability("BROWSERSTACK_BUILD_NAME","Intergration Jenkins BS Plugin Build");
+        //desiredCapabilities.setCapability("build","ANIMED DIRECT" + " :: AUTOMATION CI");
+        //desiredCapabilities.setCapability("build","Intergration Jenkins BS Plugin Build");
+        desiredCapabilities.setCapability("build", buildName);
 
         driver = WebDriverManager.chromedriver()
                 .capabilities(desiredCapabilities)

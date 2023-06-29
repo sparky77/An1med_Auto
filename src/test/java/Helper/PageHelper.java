@@ -64,6 +64,7 @@ public class PageHelper {
             default:
                 System.out.println("-------------------------");
                 System.out.println("-------------------------");
+                System.out.println("-------------------------");
                 System.out.println("Invalid customer action: " + action);
                 break;
         }

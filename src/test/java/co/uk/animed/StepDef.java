@@ -11,6 +11,7 @@ public class StepDef {
     public void customerVisitsAnimedirectAndVerifysTitle() {
         firstTest.openBrowserTest();
         System.out.println("testing for CI purposes.");
+        System.out.println("testing for CI purposes.");
     }
 
     @Test

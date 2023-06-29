@@ -95,10 +95,10 @@ public class PageHelper {
             String productName = product.findElement(By.cssSelector("div.product.name.product-item-name.category-products__name")).getText();
             String price = product.findElement(By.cssSelector("div.price-box.price-final_price")).getText();
 
-            System.out.println("----------------");
+            System.out.println("-----------------");
             System.out.println(productName);
             System.out.println(price);
-            System.out.println("----------------");
+            System.out.println("-----------------");
         }
     }
 

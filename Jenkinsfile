@@ -13,7 +13,7 @@ pipeline {
         MVN_HOME = tool 'Maven_Home'
       }
       steps {
-        withSonarQubeEnv() {
+        withSonarQubeEnv('SonarQube') {
           sh "${env.MVN_HOME}/bin/mvn clean verify sonar:sonar -Dsonar.projectKey=TestProject -Dsonar.projectName='TestProject'"
         }
       }
